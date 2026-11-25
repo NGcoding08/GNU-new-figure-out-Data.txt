@@ -1,0 +1,9 @@
+set term png
+set output "gnu6.png"
+set title "Data fitting"
+set xlabel "x"
+set ylabel "f(x)"
+set xrange [0:20]
+f(x)=m*x + c
+fit f(x) "data6.txt" using 1:2 via m , c
+plot "data6.txt" using 1:2 with points , f(x)
